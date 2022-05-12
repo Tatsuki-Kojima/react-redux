@@ -50,7 +50,7 @@ function ReducerFunction(countState: NumberState, action: string) {
     return countState;
 }
 
-export function Counter() {
+export function ReducerContainer() {
     const [state, dispatch] = useReducer(ReducerFunction, initState);
 
     return (
@@ -70,4 +70,3 @@ export function Counter() {
         </div>
     )
 }
-

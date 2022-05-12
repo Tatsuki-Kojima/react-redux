@@ -8,11 +8,6 @@ interface MemoState {
     count: number,
 }
 
-const InitState = {
-    text: null,
-    count: 0,
-}
-
 function AddState(state: MemoState) {
     return {
         text: state.text,
@@ -20,12 +15,14 @@ function AddState(state: MemoState) {
     };
 }
 
+// 乗算して返す
 function Square(state: MemoState) {
     if (state.text === "nonmemo")
         Heavy();
     return state.count * state.count;
 }
 
+// NonMemo用の重い処理
 function Heavy() {
     let i = 0;
     while (i < 10000000) i++;
@@ -35,7 +32,7 @@ function Heavy() {
 //表示の際に効果を発揮
 // 同じ関数内に2種の値を置いて
 // 関数呼び出し時には値を再取得している
-export function MemoCounter() {
+export function MemoContainer() {
     const [memoState, setMemoState] = useState({ text: "memo", count: 0 });
     const [nonMemoState, setNonMemoState] = useState({ text: "nonmemo", count: 0 });
 
