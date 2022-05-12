@@ -1,0 +1,10 @@
+.CounterBox {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.CounterItem {
+    width: 60%;
+    text-align: center;
+}
