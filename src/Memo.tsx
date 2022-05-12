@@ -17,15 +17,14 @@ function AddState(state: MemoState) {
 
 // 乗算して返す
 function Square(state: MemoState) {
-    if (state.text === "nonmemo")
-        Heavy();
+    Heavy();
     return state.count * state.count;
 }
 
 // NonMemo用の重い処理
 function Heavy() {
     let i = 0;
-    while (i < 10000000) i++;
+    while (i < 1000000000) i++;
     return;
 }
 
@@ -40,7 +39,7 @@ export function MemoContainer() {
     const resultNonMemo = () => setNonMemoState(AddState(nonMemoState));
 
     const SquareMemo = useMemo(() => Square(memoState), [memoState]);
-    const SquareNonMemo = useMemo(() => Square(nonMemoState), [nonMemoState]);
+    const SquareNonMemo = Square(nonMemoState);
 
     return (
         <div>
