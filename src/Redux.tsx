@@ -16,6 +16,11 @@ const initState: NumberState = {
     action: null,
 }
 
+// SetStateはsetの際にset用の関数を渡すが、
+// 関数ではなくDispatch関数にactionのkeyを渡して実行する
+// あまり関係性のない話で、コンポーネントの再レンダリング無しで
+// 内部に保持している値を変更したい場合にはuseStateではなくuseRefを使うといい
+// useRefは入力フォーム等に有用
 function ReducerFunction(countState: NumberState, action: string) {
     switch (action) {
         case "add":
