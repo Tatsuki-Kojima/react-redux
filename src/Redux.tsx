@@ -1,3 +1,5 @@
+// useReducer関数の学習のために用いた。
+
 import { Button, ButtonGroup } from "@mui/material";
 import { useReducer } from "react";
 // import "./Redux.css"
